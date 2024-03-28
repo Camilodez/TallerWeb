@@ -1,1 +1,20 @@
-<p>barra-busqueda works!</p>
+<h1>Buscar</h1>
+<div>
+    <form #form="ngForm" (ngSubmit)= "buscarUsuario()">
+        <label for="username">Usuario</label>
+        <input type="text" name="username" [(ngModel)]="txtuser">
+        <button type="submit">Buscar Usuario</button>
+    </form>
+
+    <ng-container *ngIf="usuario">
+        <p>Nombre: {{usuario.firstName}}</p>
+        <p>Apellido: {{usuario.lastName}}</p>
+        <p>Edad: {{usuario.age}}</p>
+        <p>Genero: {{usuario.gender}}</p>
+        <p>Email: {{usuario.email}}</p>
+        <p>Username: {{usuario.username}}</p>
+        <p>ID: {{usuario.id}}</p>
+    </ng-container>
+
+</div>
+
