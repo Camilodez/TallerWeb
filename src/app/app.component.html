@@ -1,2 +1,8 @@
-<h1>Hola </h1>
-<app-barra-busqueda></app-barra-busqueda>
+<h1>Buscar</h1>
+<form #form="ngForm" (ngSubmit)= "buscarUsuario()">
+    <label for="username">Usuario</label>
+    <input type="text" name="username" [(ngModel)]="txtuser">
+    <button type="submit">Buscar Usuario</button>
+</form>
+<app-barra-busqueda [root] = "usuario" ></app-barra-busqueda>
+<app-post [raiz] = "posts"></app-post>

@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BarraBusquedaComponent } from './barra/barra-busqueda/barra-busqueda.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BarraBusquedaComponent
+    BarraBusquedaComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
