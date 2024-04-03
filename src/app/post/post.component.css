@@ -1,0 +1,57 @@
+.post-container {
+    display: flex;
+    flex-direction: column; /* Alinea los posts en una columna */
+    align-items: center; /* Centra los posts horizontalmente */
+    width: 100%; /* Ocupa el ancho total de su contenedor padre */
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+.post, .comment {
+    background: #f8f8f8; /* Color de fondo para las cajas */
+    border: 1px solid #ccc; /* Borde para las cajas */
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 15px; /* Espaciado interno para el contenido */
+    margin-bottom: 10px; /* Espacio entre las cajas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.post {
+    background: #fff; /* Color de fondo para los posts */
+    border-radius: 8px; /* Esquinas redondeadas */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera para profundidad */
+    width: 90%; /* O el ancho deseado para los posts */
+    margin-bottom: 20px; /* Espacio entre posts */
+    padding: 20px; /* Espaciado interno */
+    width: 1000px;
+}
+
+.comments {
+    background: #e9e9e9; /* Color de fondo para el área de comentarios */
+    border: 1px solid #ddd; /* Borde para el área de comentarios */
+    border-radius: 8px; /* Esquinas redondeadas */
+    padding: 10px; /* Espaciado interno para el área de comentarios */
+    margin-top: 10px; /* Espacio antes del área de comentarios */
+}
+
+/* Puedes querer estilizar específicamente el título y el cuerpo del post para diferenciarlos */
+.post h3 {
+    margin-top: 0;
+}
+
+.post p {
+    margin-bottom: 10px; /* Espacio entre párrafos */
+  
+}
+
+.comment p {
+    background: #fff; /* Fondo blanco para resaltar los comentarios individuales */
+    border-radius: 5px; /* Esquinas más suavemente redondeadas para los comentarios */
+    padding: 5px; /* Espaciado interno para los comentarios */
+}
+
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    padding: 20px;
+}

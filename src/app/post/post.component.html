@@ -1,17 +1,14 @@
 <h2>Posts</h2>
-<ng-container *ngIf="id">
-        <tr *ngFor="let post of publicaciones">
-                <h3>Post</h3>
-                <div>
-                        <td>{{post.id}}</td>
-                        <td>{{post.title}}</td>
-                        <td>{{post.body}}</td>
-                        <td>{{post.reactions}}</td>
-                </div>
-                <h5>Comentarios</h5>
-                <div *ngFor="let comment of comentarios">
-                        <p>{{comment.user.username}}: {{comment.body}}</p>
-                </div>
-        </tr>   
-</ng-container>
-
+<div class="post-container" *ngIf="id">
+    <div *ngFor="let post of publicaciones" class="post">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.body }}</p>
+        <p>Reactions: {{ post.reactions }}</p>
+        <div class="comments">
+            <h5>Comentarios</h5>
+            <div *ngFor="let comment of comentarios" class="comment">
+                <p><strong>{{ comment.user.username }}:</strong> {{ comment.body }}</p>
+            </div>
+        </div>
+    </div>
+</div>

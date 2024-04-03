@@ -1,23 +1,43 @@
-.container-user{
-    background-color: #265073;
+.container-user {
+    background-color: #2D9596;
     display: flex;
     flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no hay espacio */
     justify-content: center; /* Centra los contenedores horizontalmente */
-    gap: 20px;
+    align-items: center; /* Alinea los elementos verticalmente */
+    gap: 20px; /* Espacio entre los elementos internos */
+    font-size: 40px; /* Tamaño de fuente para el texto dentro del contenedor */
+    position: relative; /* Posicionamiento relativo para el posicionamiento de los pseudo-elementos o niños absolutos */
+    width: 50%; /* El contenedor usará el 50% del ancho del contenedor padre */
+    margin: 0 auto; /* Margen automático para centrar el contenedor en el bloque padre */
+    margin-top: 70px;
 }
 
-.container-user > *:not(.container-email) {
-    flex: 1; /* Todos los contenedores crecerán equitativamente */
-}
 
 .container-email {
     display: flex; /* Establece el contenedor como un flexbox */
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center;
     width: 100%; /* Ocupa el ancho completo de .container-user */
+    padding: 20px;
+   
+    color: #fff; /* Color del texto */
+    box-sizing: border-box; /* Asegúrate de que el padding no afecte el tamaño total */
 }
 
+.container-FirstName, .container-LastName {
+    flex: 2; /* Darles más flexibilidad para que ocupen más espacio */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+    margin-bottom: 60px;
+    justify-content: center; /* Asegura que el contenido esté centrado verticalmente */
+}
 
+.container-FirstName p, .container-LastName p {
+    margin-bottom: 10px; /* Aumenta la separación vertical entre los párrafos */
+}
 
 .container-FirstName, .container-imguser, .container-LastName {
     display: flex;
@@ -35,11 +55,18 @@
 /* Opcional: Si quieres que la imagen también se alinee con los textos */
 .container-imguser {
     display: flex;
-    align-items: center; /* Centra la imagen y el texto verticalmente */
-    gap: 10px; /* Espacio entre la imagen y el texto */
+    position: relative;
+    align-items: center; 
+    gap: 30px; 
+    color: #fff;
 }
 
 .container-imguser img {
-    width: 50px; /* O el tamaño que prefieras para tus imágenes */
-    height: auto; /* Mantiene la proporción de las imágenes */
+    width: 200px; 
+    height: 200px; /* Asegurándose de que la altura sea igual al ancho para mantener el círculo perfecto */
+    background-color: black; /* Color de fondo de la imagen */
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    object-fit: cover; /* Si tienes una imagen, asegúrate de que cubra todo el espacio */
+    position: absolute; /* Posicionamiento absoluto respecto al contenedor más cercano con posición relativa */
+    top: 10px;
 }

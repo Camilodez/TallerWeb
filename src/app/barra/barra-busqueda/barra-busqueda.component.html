@@ -1,31 +1,28 @@
-
-<div class="container-user">
+<!-- Contenedor principal que responde al clic -->
+<div class="container-user" >
     <ng-container *ngIf="root">
-
+      
+      <!-- Contenedor de la imagen que siempre es visible -->
+      <div class="container-imguser">
+        <img src="/assets/images/usuario.png" alt="">
+        <p>{{ root.username }}</p>
+      </div>
+  
+      <!-- Contenido adicional que se muestra/oculta -->
+      <div class="additional-content">
         <div class="container-FirstName">
-            <p> {{root.firstName}}</p>
-            <p> {{root.age}}</p>
+          <p>{{ root.firstName }}</p>
+          <p>{{ root.age }}</p>
         </div>
-
-        <div class="container-imguser">
-            <img src="/assets/images/usuario.png" alt="">
-            <p> {{root.username}}</p>
-        </div>
-
         <div class="container-LastName">
-            <p> {{root.lastName}}</p>
-       
-            <p> {{root.gender}}</p>
+          <p>{{ root.lastName }}</p>
+          <p>{{ root.gender }}</p>
         </div>
-        
         <div class="container-email">
-            <p> {{root.email}}</p>
-      
-            <p> {{root.id}}</p>
+          <p>{{ root.email }}</p>
         </div>
-      
-      
+      </div>
+  
     </ng-container>
-
-</div>
-
+  </div>
+  

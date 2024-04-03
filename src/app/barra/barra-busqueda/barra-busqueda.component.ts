@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
-import { Observable } from 'rxjs';
 import { User } from 'src/app/models/User';
 
 @Component({
@@ -9,8 +7,11 @@ import { User } from 'src/app/models/User';
   styleUrls: ['./barra-busqueda.component.css']
 })
 export class BarraBusquedaComponent {
-
   @Input() root: User | null = null;
-  
+  isContentVisible = false; // Un solo estado para controlar la visibilidad
 
+  // Método para alternar la visibilidad
+  toggleContentVisibility(): void {
+    this.isContentVisible = !this.isContentVisible;
+  }
 }

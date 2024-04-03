@@ -1,12 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-
+html, body {
+  width: 100%; /* Ocupa todo el ancho de la ventana */
+  margin: 0; /* Quita cualquier margen por defecto */
+  padding: 0; /* Quita cualquier padding por defecto */
+ 
+}
 body {
     font-family: 'Roboto', sans-serif; /* Asegúrate de reemplazar 'Roboto' con el nombre de tu fuente */
+    background-color: #F1FADA;
   }
-
-  :host {
-    display: block;
-    box-sizing: border-box;
-    min-height: 100vh; /* Esto asegura que el componente se estire al menos a la altura completa de la ventana del navegador */
-    background-color: #F1FADA; /* Reemplaza #colorDeFondo con el código de color que prefieras */
-}
