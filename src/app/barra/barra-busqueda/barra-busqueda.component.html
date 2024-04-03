@@ -1,14 +1,30 @@
 
 <div class="container-user">
     <ng-container *ngIf="root">
-        <p>Nombre: {{root.firstName}}</p>
-        <p>Apellido: {{root.lastName}}</p>
-        <p>Edad: {{root.age}}</p>
-        <p>Genero: {{root.gender}}</p>
-        <img src="/assets/images/search.png" alt="">
-        <p>Email: {{root.email}}</p>
-        <p>Username: {{root.username}}</p>
-        <p>ID: {{root.id}}</p>
+
+        <div class="container-FirstName">
+            <p> {{root.firstName}}</p>
+            <p> {{root.age}}</p>
+        </div>
+
+        <div class="container-imguser">
+            <img src="/assets/images/usuario.png" alt="">
+            <p> {{root.username}}</p>
+        </div>
+
+        <div class="container-LastName">
+            <p> {{root.lastName}}</p>
+       
+            <p> {{root.gender}}</p>
+        </div>
+        
+        <div class="container-email">
+            <p> {{root.email}}</p>
+      
+            <p> {{root.id}}</p>
+        </div>
+      
+      
     </ng-container>
 
 </div>

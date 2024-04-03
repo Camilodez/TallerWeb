@@ -1,7 +1,45 @@
 .container-user{
+    background-color: #265073;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no hay espacio */
+    justify-content: center; /* Centra los contenedores horizontalmente */
+    gap: 20px;
+}
+
+.container-user > *:not(.container-email) {
+    flex: 1; /* Todos los contenedores crecerán equitativamente */
+}
+
+.container-email {
+    display: flex; /* Establece el contenedor como un flexbox */
+    justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center;
-    min-height: 50%;
+    width: 100%; /* Ocupa el ancho completo de .container-user */
+}
+
+
+
+.container-FirstName, .container-imguser, .container-LastName {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos hijos en una columna */
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Opcional: Puedes agregar estilos adicionales a las etiquetas p si lo deseas */
+.container-user p {
+    margin: 0; /* Elimina los márgenes por defecto para los párrafos */
+}
+
+/* Opcional: Si quieres que la imagen también se alinee con los textos */
+.container-imguser {
+    display: flex;
+    align-items: center; /* Centra la imagen y el texto verticalmente */
+    gap: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.container-imguser img {
+    width: 50px; /* O el tamaño que prefieras para tus imágenes */
+    height: auto; /* Mantiene la proporción de las imágenes */
 }
