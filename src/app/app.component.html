@@ -1,9 +1,18 @@
-<h1>Buscar</h1>
-<form #form="ngForm" (ngSubmit)= "buscarUsuario()">
-    <label for="username">Usuario</label>
-    <input type="text" name="username" [(ngModel)]="txtuser">
-    <button type="submit">Buscar Usuario</button>
-</form>
+
+<div class="header-container">
+    <h1>Buscar</h1>
+    <div class="form-group">
+        <form #form="ngForm" (ngSubmit)="buscarUsuario()">
+            <div class="input-container" [class.expanded]="isInputExpanded" (mouseleave)="isInputExpanded && toggleInput()">
+                <input type="text" id="username" name="username" [(ngModel)]="txtuser" class="input-field" placeholder="Buscar Usuario" *ngIf="isInputExpanded">
+                <button type="button" id="botonConImagen" (click)="toggleInput()" (mouseenter)="expandInput()">
+                    <img src="/assets/images/search.png" alt="Buscar"/>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
 <app-barra-busqueda [root] = "usuario" ></app-barra-busqueda>
 
 <app-post [id] = "usuario?.id"></app-post>

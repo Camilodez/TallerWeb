@@ -1,0 +1,62 @@
+:host {
+    display: block;
+    box-sizing: border-box;
+    min-height: 100vh; /* Esto asegura que el componente se estire al menos a la altura completa de la ventana del navegador */
+    background-color: #F1FADA; /* Reemplaza #colorDeFondo con el código de color que prefieras */
+}
+
+
+
+.header-container {
+    background-color: #2D9596; 
+    padding: 20px; 
+    margin: 20px; 
+    border-radius: 8px; 
+    box-sizing: border-box;  
+    width: calc(100% - 40px); 
+    height: calc(100% - 40px); 
+}
+.header-container h1 {
+    color: #fff;
+ 
+}
+
+.input-container {
+    position: relative;
+    width: 60px; /* Ancho inicial para solo mostrar el botón */
+    height: 50px; /* Altura para el botón */
+    transition: width 0.5s ease; /* Transición suave para el ancho */
+    overflow: hidden; /* Oculta el input inicialmente */
+}
+
+.input-container.expanded {
+    width: 15%; /* Ancho completo cuando el input está expandido */
+}
+
+.input-field {
+    width: 100%; 
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #9AD0C2;
+    background-color: #9AD0C2;
+    border-radius: 20px; 
+    position: absolute; 
+    right: 0;
+    top: 0;
+}
+
+#botonConImagen {
+    position: absolute; 
+    right: 0;
+    top: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    width: 50px; 
+    height: 50px; 
+}
+
+#botonConImagen img {
+    width: 110%; 
+    height: auto; 
+}
