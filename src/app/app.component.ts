@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { User } from './models/User';
-import { Post } from './models/Post';
 
 @Component({
   selector: 'app-root',
@@ -15,30 +14,40 @@ export class AppComponent {
   txtuser: string = "";
   user$: Observable<any> = new Observable();
   usuario: User | null = null;
-  posts: Post | null = null;
-  isInputExpanded: boolean = false; // Agregado para controlar la expansión del input
+  isInputExpanded: boolean = false;
 
   constructor(private http: HttpClient) {}
 
+  // Llamado cuando se hace clic en el botón de búsqueda
   buscarUsuario() {
     if (!this.isInputExpanded) {
-      // Si el input no está expandido, expandirlo y no realizar la búsqueda
-      this.isInputExpanded = true;
-      return;
+      this.toggleInput(); // Si el input está contraído, simplemente lo expande
+    } else if (this.txtuser) {
+      this.realizarBusqueda(); // Si ya está expandido y hay texto, realiza la búsqueda
     }
-
-    this.user$ = this.http.get(`${this.ROOT_URL}/users/filter?key=username&value=${this.txtuser}`);
-    this.user$.subscribe(data => {
-      this.usuario = data.users[0];
-      console.log(this.usuario);
-    });
   }
 
+  // Cambia la visibilidad del input
   toggleInput() {
     this.isInputExpanded = !this.isInputExpanded;
   }
 
+  // Método para realizar la búsqueda
+  realizarBusqueda() {
+    this.user$ = this.http.get(`${this.ROOT_URL}/users/filter?key=username&value=${this.txtuser}`);
+    this.user$.subscribe(data => {
+      this.usuario = data.users[0];
+      console.log(this.usuario);
+      // Opcional: resetea el input después de la búsqueda
+      // this.isInputExpanded = false;
+      // this.txtuser = "";
+    });
+  }
+
+  // Llamado cuando el mouse entra en el área del botón
   expandInput() {
-    this.isInputExpanded = true;
+    if (!this.isInputExpanded) {
+      this.isInputExpanded = true;
+    }
   }
 }

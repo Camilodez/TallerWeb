@@ -5,9 +5,9 @@
         <form #form="ngForm" (ngSubmit)="buscarUsuario()">
             <div class="input-container" [class.expanded]="isInputExpanded" (mouseleave)="isInputExpanded && toggleInput()">
                 <input type="text" id="username" name="username" [(ngModel)]="txtuser" class="input-field" placeholder="Buscar Usuario" *ngIf="isInputExpanded">
-                <button type="button" id="botonConImagen" (click)="toggleInput()" (mouseenter)="expandInput()">
+                <button type="button" id="botonConImagen" (click)="realizarBusqueda()" (mouseenter)="expandInput()">
                     <img src="/assets/images/search.png" alt="Buscar"/>
-                </button>
+                  </button>
             </div>
         </form>
     </div>
