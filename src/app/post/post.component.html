@@ -1,8 +1,17 @@
-<h2>Post</h2>
-<ng-container *ngIf="raiz">
-        <h3>{{raiz.title}}</h3>
-        <p>{{raiz.body}}</p>
-        <p>{{raiz.reactions}}</p>
-        <p>{{raiz.id}}</p>
+<h2>Posts</h2>
+<ng-container *ngIf="id">
+        <tr *ngFor="let post of publicaciones">
+                <h3>Post</h3>
+                <div>
+                        <td>{{post.id}}</td>
+                        <td>{{post.title}}</td>
+                        <td>{{post.body}}</td>
+                        <td>{{post.reactions}}</td>
+                </div>
+                <h5>Comentarios</h5>
+                <div *ngFor="let comment of comentarios">
+                        <p>{{comment.user.username}}: {{comment.body}}</p>
+                </div>
+        </tr>   
 </ng-container>
 
