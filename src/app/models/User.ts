@@ -6,4 +6,5 @@ export interface User{
     gender:string
     email:string
     username:string
+    image:string
 }

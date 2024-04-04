@@ -1,13 +1,14 @@
 <div class="container-user">
   <ng-container *ngIf="root">
     <div class="container-imguser" [class.show-info]="showInfo" (click)="toggleInfo()">
-      <img src="/assets/images/usuario.png" alt="">
+     <img src="{{ root.image }}" alt="">
       
   </div>
     <div *ngIf="showInfo" class="additional-content">
       <div class="container-FirstName">
         <p>{{ root.firstName }}</p>
         <p>{{ root.age }}</p>
+   
       </div>
       <div class="container-LastName">
         <p>{{ root.gender }}</p>
