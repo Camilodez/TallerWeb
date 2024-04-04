@@ -3,7 +3,7 @@
     <div *ngFor="let post of publicaciones" class="post">
         <h3>{{ post.title }}</h3>
         <p>{{ post.body }}</p>
-        <p>Reactions: {{ post.reactions }}</p>
+        <p><strong>Reactions: </strong> {{ post.reactions }} </p>
         <div class="comments">
             <h5>Comentarios</h5>
             <div *ngFor="let comment of comentarios" class="comment">
