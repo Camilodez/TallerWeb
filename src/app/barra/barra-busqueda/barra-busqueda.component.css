@@ -1,72 +1,59 @@
 .container-user {
-    background-color: #2D9596;
     display: flex;
-    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no hay espacio */
-    justify-content: center; /* Centra los contenedores horizontalmente */
-    align-items: center; /* Alinea los elementos verticalmente */
-    gap: 20px; /* Espacio entre los elementos internos */
-    font-size: 40px; /* Tamaño de fuente para el texto dentro del contenedor */
-    position: relative; /* Posicionamiento relativo para el posicionamiento de los pseudo-elementos o niños absolutos */
-    width: 50%; /* El contenedor usará el 50% del ancho del contenedor padre */
-    margin: 0 auto; /* Margen automático para centrar el contenedor en el bloque padre */
-    margin-top: 70px;
-}
-
-
-.container-email {
-    display: flex; /* Establece el contenedor como un flexbox */
-    justify-content: center; /* Centra el contenido horizontalmente */
-    align-items: center;
-    width: 100%; /* Ocupa el ancho completo de .container-user */
-    padding: 20px;
-   
-    color: #fff; /* Color del texto */
-    box-sizing: border-box; /* Asegúrate de que el padding no afecte el tamaño total */
-}
-
-.container-FirstName, .container-LastName {
-    flex: 2; /* Darles más flexibilidad para que ocupen más espacio */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    color: #fff;
-    margin-bottom: 60px;
-    justify-content: center; /* Asegura que el contenido esté centrado verticalmente */
-}
-
-.container-FirstName p, .container-LastName p {
-    margin-bottom: 10px; /* Aumenta la separación vertical entre los párrafos */
-}
-
-.container-FirstName, .container-imguser, .container-LastName {
-    display: flex;
-    flex-direction: column; /* Organiza los elementos hijos en una columna */
-    align-items: center;
-    padding: 20px;
-    color: #fff;
-}
-
-/* Opcional: Puedes agregar estilos adicionales a las etiquetas p si lo deseas */
-.container-user p {
-    margin: 0; /* Elimina los márgenes por defecto para los párrafos */
-}
-
-/* Opcional: Si quieres que la imagen también se alinee con los textos */
-.container-imguser {
-    display: flex;
+    flex-direction: column; /* Organiza los hijos en una columna */
+    justify-content: center; /* Centra los hijos verticalmente */
+    align-items: center; /* Centra los hijos horizontalmente */
+    height: 70%; /* O la altura que prefieras */
     position: relative;
-    align-items: center; 
-    gap: 30px; 
-    color: #fff;
+    margin-top: 80px;
+    width: 100%;
+}
+
+.container-imguser {
+    /* Estilos existentes para .container-imguser */
+    transition: background-color 0.3s; /* Transición suave del color de fondo */
+    cursor: pointer; /* Indica que se puede hacer clic en la imagen */
+    position: absolute; /* Posiciona el contenedor de la imagen */
+    top: -100px; /* Ajusta esto para 'sobresalir' */
+    z-index: 1; /* Asegura que el contenedor de la imagen esté por encima del contenido adicional */
+    
 }
 
 .container-imguser img {
-    width: 200px; 
-    height: 200px; /* Asegurándose de que la altura sea igual al ancho para mantener el círculo perfecto */
-    background-color: black; /* Color de fondo de la imagen */
-    border-radius: 50%; /* Hace que la imagen sea redonda */
-    object-fit: cover; /* Si tienes una imagen, asegúrate de que cubra todo el espacio */
-    position: absolute; /* Posicionamiento absoluto respecto al contenedor más cercano con posición relativa */
-    top: 10px;
+    width: 200px; /* Tamaño de la imagen, ajusta según sea necesario */
+    height: 200px; /* Tamaño de la imagen, ajusta según sea necesario */
+    border-radius: 50%; /* Esto es para mantener la imagen redonda */
+    object-fit: cover; /* Esto asegura que la imagen cubra todo el espacio disponible */
+    display: block; /* Asegura que la imagen no tenga espacio extra alrededor como un inline-block */
+}
+
+.container-imguser.show-info {
+    background-color: #2D9596; /* El color de fondo cuando se muestra la información */
+    z-index: 2; /* Asegúrate de que está sobre el contenido adicional */
+    border-radius: 50%; /* El radio de la frontera si quieres esquinas redondeadas */
+    /* Puedes necesitar ajustar el tamaño y la posición para acomodar el nuevo contenido */
+}
+
+.additional-content {
+    display: flex;
+    flex-direction: row; /* Distribuye los hijos horizontalmente */
+    justify-content: space-around; /* Distribuye el espacio uniformemente alrededor de los elementos */
+    align-items: center; /* Centra los elementos verticalmente */
+    width: 70%;
+    padding: 20px;
+    background-color: #2D9596;
+    border-radius: 20px;
+    /* Asegúrate de que el contenedor sea lo suficientemente grande como para mostrar todos los elementos */
+}
+
+.container-FirstName, .container-LastName, .container-email {
+    flex: 1; 
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
+    margin: 10px 0; 
+    color: #fff;
+    font-size: 30px;
 }

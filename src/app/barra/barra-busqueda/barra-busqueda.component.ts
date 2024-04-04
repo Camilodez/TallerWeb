@@ -8,10 +8,10 @@ import { User } from 'src/app/models/User';
 })
 export class BarraBusquedaComponent {
   @Input() root: User | null = null;
-  isContentVisible = false; // Un solo estado para controlar la visibilidad
+  showInfo = false; // Variable para controlar la visibilidad de la información
 
-  // Método para alternar la visibilidad
-  toggleContentVisibility(): void {
-    this.isContentVisible = !this.isContentVisible;
+  // Método para alternar la visibilidad de la información
+  toggleInfo() {
+    this.showInfo = !this.showInfo;
   }
 }
